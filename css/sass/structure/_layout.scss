@@ -29,5 +29,6 @@
             clear: both;
             @include center-block;
             width: $size__site-main;
+            overflow: hidden;
         }
 }
