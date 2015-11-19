@@ -4,8 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _s
+ * @package blackpirates
  */
+
+
+require_once( get_template_directory() . '/inc/constants.php' );
+$options = blackpirates_initoptions();
+require_once( get_template_directory() . '/inc/helper-functions.php' );
+require_once( get_template_directory() . '/inc/theme-options.php' );    
 
 if ( ! function_exists( 'blackpirates_setup' ) ) :
 /**
@@ -76,7 +82,24 @@ function blackpirates_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+        
+        // Remove comments on pages
+       	remove_post_type_support( 'page', 'comments' );
+
+
+	/* Remove something out of the head */
+	remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+	remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed	
+	remove_action( 'wp_head', 'post_comments_feed_link ', 2 ); // Display the links to the general feeds: Post and Comment Feed
+	remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+	remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+	remove_action( 'wp_head', 'index_rel_link' ); // index link
+	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
+	remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post.
+	//remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);
+
 }
+
 endif; // blackpirates_setup
 add_action( 'after_setup_theme', 'blackpirates_setup' );
 
@@ -150,3 +173,142 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+
+/**
+ *  Theme dependend functions
+ */
+
+ 
+/*
+ * Init options
+ */
+
+function blackpirates_initoptions() {
+   global $defaultoptions;
+    
+    $oldoptions = get_option('blackpirates_theme_options');
+    if (isset($oldoptions) && (is_array($oldoptions))) {
+        $newoptions = array_merge($defaultoptions,$oldoptions);	  
+    } else {
+        $newoptions = $defaultoptions;
+    }    
+    return $newoptions;
+}
+
+/* 
+ * Create breadcrumb
+ */
+ 
+ 
+function blackpirates_breadcrumb($lasttitle = '') {
+  global $options;
+  
+  $delimiter	= $options['breadcrumb_delimiter']; // = ' / ';
+  $home		= $options['breadcrumb_root']; // __( 'Startseite', 'blackpirates' ); // text for the 'Home' link
+  $before	= $options['breadcrumb_beforehtml']; // '<span class="current">'; // tag before the current crumb
+  $after	= $options['breadcrumb_afterhtml']; // '</span>'; // tag after the current crumb
+  $pretitletextstart   = '<span>';
+  $pretitletextend     = '</span>';
+  
+  if ($options['breadcrumb_withtitle']) {
+	echo '<h3 class="breadcrumb_sitetitle" role="presentation">'.get_bloginfo( 'title' ).'</h3>';
+	echo "\n";
+    }
+  echo '<nav aria-labelledby="bc-title" class="breadcrumbs">'; 
+  echo '<h4 class="screen-reader-text" id="bc-title">'.__('You are here:','blackpirates').'</h4>';
+  if ( !is_home() && !is_front_page() || is_paged() ) { 
+    
+    global $post;
+    
+    $homeLink = home_url('/');
+    echo '<a href="' . $homeLink . '">' . $home . '</a>' . $delimiter;
+ 
+    if ( is_category() ) {
+	global $wp_query;
+	$cat_obj = $wp_query->get_queried_object();
+	$thisCat = $cat_obj->term_id;
+	$thisCat = get_category($thisCat);
+	$parentCat = get_category($thisCat->parent);
+	if ($thisCat->parent != 0) 
+	    echo(get_category_parents($parentCat, TRUE, $delimiter ));
+	echo $before . single_cat_title('', false) .  $after;
+ 
+    } elseif ( is_day() ) {
+	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$delimiter;
+	echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' .$delimiter;
+	echo $before . get_the_time('d') . $after; 
+    } elseif ( is_month() ) {
+	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $delimiter;
+	echo $before . get_the_time('F') . $after;
+    } elseif ( is_year() ) {
+	echo $before . get_the_time('Y') . $after; 
+    } elseif ( is_single() && !is_attachment() ) {
+	 
+	if ( get_post_type() != 'post' ) {
+	    $post_type = get_post_type_object(get_post_type());
+	    $slug = $post_type->rewrite;
+	    echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>' .$delimiter;
+	    echo $before . get_the_title() . $after; 
+	} else {
+	    
+	$cat = get_the_category(); 
+	if ($options['breadcrumb_uselastcat']) {
+	    $last = array_pop($cat);
+	} else {
+	    $last = $cat[0];
+	}
+	$catid = $last->cat_ID;
+
+	echo get_category_parents($catid, TRUE,  $delimiter );
+	echo $before . get_the_title() . $after;
+
+	} 
+    } elseif ( !is_single() && !is_page() && !is_search() && get_post_type() != 'post' && !is_404() ) {
+	$post_type = get_post_type_object(get_post_type());
+	echo $before . $post_type->labels->singular_name . $after;
+    } elseif ( is_attachment() ) {
+	$parent = get_post($post->post_parent);
+	echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>'. $delimiter;
+	echo $before . get_the_title() . $after;
+    } elseif ( is_page() && !$post->post_parent ) {
+	echo $before . get_the_title() . $after;
+ 
+    } elseif ( is_page() && $post->post_parent ) {
+	$parent_id  = $post->post_parent;
+	$breadcrumbs = array();
+	while ($parent_id) {
+	    $page = get_page($parent_id);
+	    $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+	    $parent_id  = $page->post_parent;
+	}
+	$breadcrumbs = array_reverse($breadcrumbs);
+	foreach ($breadcrumbs as $crumb) echo $crumb . $delimiter;
+	echo $before . get_the_title() . $after; 
+    } elseif ( is_search() ) {
+	if (isset($lasttitle) && (strlen(trim($lasttitle))>1)) {
+	    echo $before . $lasttitle. $after; 
+	} else {
+	    echo $before .$pretitletextstart. __( 'Search for', 'blackpirates' ).$pretitletextend.' "' . get_search_query() . '"' . $after; 
+	}
+    } elseif ( is_tag() ) {
+	echo $before .$pretitletextstart. __( 'Tag', 'blackpirates' ).$pretitletextend. ' "' . single_tag_title('', false) . '"' . $after; 
+    } elseif ( is_author() ) {
+	global $author;
+	$userdata = get_userdata($author);
+	echo $before .$pretitletextstart. __( 'Entries by', 'blackpirates' ).$pretitletextend.' '.$userdata->display_name . $after;
+    } elseif ( is_404() ) {
+	echo $before . '404' . $after;
+    }
+
+  } elseif (is_front_page())  {
+	echo $before . $home . $after;
+  } elseif (is_home()) {
+	echo $before . get_the_title(get_option('page_for_posts')) . $after;
+  }
+   echo '</nav>'; 
+   
+  
+   
+}

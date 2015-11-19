@@ -45,7 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
+@import "variables";
 
 /*--------------------------------------------------------------
 # Mixins
@@ -99,7 +99,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "structure/secondary/widgets";
 
 /*--------------------------------------------------------------
-# Content
+# Content and general layout
 --------------------------------------------------------------*/
 @import "structure/structure";
 
@@ -116,11 +116,5 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
-
-/*--------------------------------------------------------------
-# Mediaqueries
---------------------------------------------------------------*/
-@import "structure/mediaqueries";
-
 
 

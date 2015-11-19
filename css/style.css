@@ -3003,6 +3003,14 @@ a {
     z-index: 100000;
     /* Above WP toolbar. */ }
 
+ul.skip-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: none; }
+  ul.skip-links:before {
+    display: none; }
+
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0; }
@@ -3063,25 +3071,35 @@ a {
     max-width: 100%; }
 
 /*--------------------------------------------------------------
-# Content
+# Content and general layout
 --------------------------------------------------------------*/
-.content-area {
-  float: left;
-  margin: 0 -25% 0 0;
-  width: 100%; }
+@media (min-width: 481px) {
+  .content-area {
+    float: left;
+    margin: 0 -25% 0 0;
+    width: 100%; }
 
-.site-main {
-  margin: 0 25% 0 0; }
+  .site-main {
+    margin: 0 25% 0 0; }
 
-.site-content .widget-area {
-  float: right;
-  overflow: hidden;
-  width: 25%; }
+  .site-content .widget-area {
+    float: right;
+    overflow: hidden;
+    width: 25%; }
 
-.site-footer {
-  clear: both;
-  width: 100%; }
-
+  .site-footer {
+    clear: both;
+    width: 100%; } }
+@media (max-width: 480px) {
+  .content-area,
+  .site-main,
+  .site-footer {
+    float: none;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; } }
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -4429,16 +4447,5 @@ object {
 
 .gallery-caption {
   display: block; }
-
-/*--------------------------------------------------------------
-# Mediaqueries
---------------------------------------------------------------*/
-/*
-Media Queries 
-
-$size__breakSM: 480px;
-$size__breakMD: 767px;
-$size__breakLG: 979px;
-*/
 
 /*# sourceMappingURL=style.css.map */
