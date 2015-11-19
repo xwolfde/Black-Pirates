@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package blackpirates
  */
 
 if ( ! function_exists( 'blackpirates_posted_on' ) ) :
