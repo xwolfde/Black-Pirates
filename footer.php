@@ -20,7 +20,12 @@
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'blackpirates' ), 'blackpirates', '<a href="http://xwolf.de/" rel="designer">xwolf</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+    
+        </div><!-- /scroller-inner -->
+    </div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- #page / .container -->
 
 <?php wp_footer(); ?>
 

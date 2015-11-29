@@ -23,6 +23,15 @@ Mixins  for borders and gradients
     background-image: -o-linear-gradient(left, $fromColor, $toColor); /* Opera 11.10+ */
     background-image: linear-gradient(left, $fromColor, $toColor);
 }
+@mixin linear-gradient-fromtop($fromColor, $toColor) {
+    background-color: $fromColor; /* Fallback Color */
+    background-image: -webkit-gradient(linear, top, bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+    background-image: -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+    background-image: -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+    background-image: linear-gradient(top, $fromColor, $toColor);
+}
 
 
 @mixin radial-gradient($color2, $color1) {
@@ -92,4 +101,8 @@ Mixins  for borders and gradients
 	display: inline-block; 
 	*display:inline; 
 	*zoom:1;
+}
+
+@mixin no-margins() {
+    margin: 0;
 }

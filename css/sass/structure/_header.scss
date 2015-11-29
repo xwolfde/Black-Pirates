@@ -1,0 +1,47 @@
+/*
+# Header CSS
+*/
+
+
+.site-header {
+    background-color: $color__background_header;
+    
+}
+
+
+
+@media (max-width: $size__breakSM) {
+   
+    .site-header {
+        position: fixed;
+        width: 100%;
+        @include linear-gradient-fromtop($color__background_header, desaturate(lighten($color__background_header, 35%), 75%));
+        
+        .site-branding {            
+            width: calc(100% - 100px);
+            @include inline-block;
+            h1 {
+                margin: 0;
+                color: orange;
+                @include inline-block;
+            }
+            img {
+                 max-height: 100px;
+                 max-width: 300px;
+                 overflow: hidden;
+                 width: auto;
+             }
+             p.site-description {
+                 margin: 0;
+                 display: inline;
+                 color: orange;
+             }
+        }
+        #site-navigation {
+            width: 100px;
+            float: right;
+            @include inline-block;
+            
+        }
+    }
+}
