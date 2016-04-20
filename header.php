@@ -22,7 +22,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site container">
+<div id="page" class="site">
     <!-- Push Wrapper -->
     <div class="mp-pusher" id="mp-pusher">
        <nav id="mp-menu" class="mp-menu" aria-label="<?php _e( 'Navigation', 'blackpirates' ); ?>" role="navigation">
@@ -38,8 +38,6 @@
                             'walker' => new Walker_Main_Menu) ); ?>
            </div>   
         </nav><!-- #site-navigation -->
-        <div class="scroller"><!-- this is for emulating position fixed of the nav -->
-            <div class="scroller-inner">
                 
         <nav aria-label="Skiplinks">
             <ul class="skip-links">		
@@ -74,12 +72,10 @@
 		
                 <div class="trigger"><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></div>     
 
-       
-                
 	</header><!-- #masthead -->
 
                 <section class="breadcrumb">
                     <?php blackpirates_breadcrumb();?>
                 </section>    
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content container">

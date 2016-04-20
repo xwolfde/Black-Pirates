@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20.04.2016, 23:44:49
+    Author     : Wiese
+*/
+
+
+
+.site-footer {
+    background-color: $color__background-footer;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+
+
+@media (max-width: $size__breakSM) {
+    .site-footer {
+        position: fixed;
+        width: 100%;
+        @include linear-gradient-fromtop($color__background-footer, desaturate(lighten($color__background-footer, 35%), 75%));
+        
+    }
+}

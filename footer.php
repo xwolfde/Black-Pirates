@@ -21,11 +21,10 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
     
-        </div><!-- /scroller-inner -->
-    </div><!-- /scroller -->
+
 
 </div><!-- /pusher -->
-</div><!-- #page / .container -->
+</div><!-- #page  -->
 
 <?php wp_footer(); ?>
 

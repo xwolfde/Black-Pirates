@@ -6,9 +6,40 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 
-blockquote {
-	margin: 0 1.5em;
+
+q {
+  background: $color__background-quote;
+  color: $color__text-quote;
 }
+
+blockquote {
+  background: $color__background-quote;
+  padding: 10px 20px;
+  margin: 0 0 1.75em 0px;
+  position: relative;
+  border-left: 3px solid $color__border-quote;
+  overflow: hidden;
+  @include font-size($font__size-quote);
+  font-style: italic;
+ 
+    p {
+        color: $color__text-quote;
+        margin: 10px;
+        
+        cite {
+            @include center-block();
+            text-align: right;
+            @include font-size(0.9375);
+        }
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    
+}
+ 
+
 
 address {
 	margin: 0 0 1.5em;
@@ -16,6 +47,7 @@ address {
 
 pre {
 	background: $color__background-pre;
+        color: $color__text-pre;
 	font-family: $font__pre;
 	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
@@ -41,5 +73,9 @@ mark, ins {
 }
 
 big {
-	font-size: 125%;
+	@include font-size(1.2);
+}
+
+figcaption {
+    @include font-size(0.9375);
 }

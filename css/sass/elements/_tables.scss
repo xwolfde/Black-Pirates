@@ -1,4 +1,22 @@
+
 table {
-	margin: 0 0 1.5em;
-	width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1.75em;
+  border: 1px solid $color__table__border;
+  width: 100%;
+}
+table th,
+table caption {
+  background: $color__table__background;
+  padding: 5px 10px;
+}
+table td {
+  padding: 5px 10px;
+}
+table tr:nth-child(odd) {
+  background: $color__table__tr_odd_background; // #fff;
+}
+table tr:nth-child(even) {
+  background: $color__table__tr_even_background; // #fcfcfc;
 }
