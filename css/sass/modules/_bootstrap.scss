@@ -180,8 +180,8 @@
 	clear: both;
 }
 
-
-@media (min-width: 768px) and (max-width: 979px) {
+// zwischen 767 und 969px
+@media (min-width: $size__breakMD) and (max-width: $size__breakLG) {
 	.row {
 		margin-left: -20px;
 		*zoom: 1;
@@ -287,8 +287,8 @@
 	}
 
 }
-
-@media (max-width: 767px) {
+// max: 767px
+@media (max-width: $size__breakMD) {
 	body {
 		padding-right: 20px;
 		padding-left: 20px;
@@ -310,7 +310,8 @@
 	
 }
 
-@media (max-width: 480px) {
+// max: 480px
+@media (max-width: $size__breakSM) {
 	input[type="checkbox"],
 	input[type="radio"] {
 		border: 1px solid #ccc;
@@ -318,7 +319,8 @@
 
 }
 
-@media (max-width: 979px) {
+// max 979px
+@media (max-width: $size__breakLG) {
 	body {
 		padding-top: 0;
 	}

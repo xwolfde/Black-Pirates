@@ -46,6 +46,8 @@
             </ul>
         </nav>
 	<header id="masthead" class="site-header" role="banner">
+            <div class="container">
+            
 		<div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                     <h1 class="site-title"><?php 
                         $header_image = get_header_image();
@@ -71,11 +73,11 @@
 		</div><!-- .site-branding -->
 		
                 <div class="trigger"><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></div>     
-
+            </div>        
 	</header><!-- #masthead -->
 
-                <section class="breadcrumb">
-                    <?php blackpirates_breadcrumb();?>
-                </section>    
+        <section class="breadcrumb container">
+            <?php blackpirates_breadcrumb();?>
+        </section>    
 
-	<div id="content" class="site-content container">
+	<div id="content" class="site-content">

@@ -247,6 +247,11 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: "DejaWeb", sans-serif; }
 
+.entry-header h1 {
+  -webkit-text-shadow: 1px 1px 1px #969696;
+  -moz-text-shadow: 1px 1px 1px #969696;
+  text-shadow: 1px 1px 1px #969696; }
+
 p {
   margin-bottom: 1.5em; }
 
@@ -3561,34 +3566,6 @@ ul.skip-links {
 /*--------------------------------------------------------------
 ## Content structure
 --------------------------------------------------------------*/
-@media (min-width: 481px) {
-  .content-area {
-    float: left;
-    margin: 0 -25% 0 0;
-    width: 100%; }
-
-  .site-main {
-    margin: 0 25% 0 0; }
-
-  .site-content .widget-area {
-    float: right;
-    overflow: hidden;
-    width: 25%; }
-
-  .site-footer {
-    clear: both;
-    width: 100%; } }
-@media (max-width: 480px) {
-  .content-area,
-  .site-main,
-  .site-footer {
-    float: none;
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    overflow: hidden; } }
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -3810,7 +3787,7 @@ and open the template in the editor.
 .container:after {
   clear: both; }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 767px) and (max-width: 979px) {
   .row {
     margin-left: -20px;
     *zoom: 1; }

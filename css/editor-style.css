@@ -108,6 +108,11 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: "DejaWeb", sans-serif; }
 
+.entry-header h1 {
+  -webkit-text-shadow: 1px 1px 1px #969696;
+  -moz-text-shadow: 1px 1px 1px #969696;
+  text-shadow: 1px 1px 1px #969696; }
+
 p {
   margin-bottom: 1.5em; }
 
@@ -3016,7 +3021,7 @@ CSS Font File for Wordpress Theme Dwarsloeper
 .container:after {
   clear: both; }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 767px) and (max-width: 979px) {
   .row {
     margin-left: -20px;
     *zoom: 1; }
