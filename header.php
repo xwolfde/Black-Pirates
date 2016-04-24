@@ -37,8 +37,7 @@
                             'menu_id'         => FALSE,
                             'walker' => new Walker_Main_Menu) ); ?>
            </div>   
-        </nav><!-- #site-navigation -->
-                
+        </nav><!-- #site-navigation -->       
         <nav aria-label="Skiplinks">
             <ul class="skip-links">		
                 <li><a id="skip-link-nav" class="screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to site navigation.', 'blackpirates' ); ?></a></li>
@@ -47,8 +46,8 @@
         </nav>
 	<header id="masthead" class="site-header" role="banner">
             <div class="container">
-            
-		<div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <div class="row">
+                    <div class="site-branding span3" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                     <h1 class="site-title"><?php 
                         $header_image = get_header_image();
 
@@ -63,21 +62,32 @@
 			if ( ! is_front_page() ) {  
                             echo "</a>"; 			    
 			}
-                        ?></h1>
-			
-                        <?php 
+                        ?></h1>   
+                    </div><!-- .site-branding -->
+                    <div class="span9">
+
+                         <?php 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-		
-                <div class="trigger"><a href="#" id="trigger" class="menu-trigger">Open/Close Menu</a></div>     
-            </div>        
+                                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                         <?php endif; ?>
+                        
+                    </div>  
+                </div>
+                </div> <!-- /.container -->        
 	</header><!-- #masthead -->
-
+       
         <section class="breadcrumb container">
-            <?php blackpirates_breadcrumb();?>
+            <div class="row">
+                <div class="span3">
+                    <div class="trigger">
+                            <a href="#" id="trigger" class="menu-trigger"><?php esc_html_e('Menu','blackpirates'); ?></a>
+                    </div>  
+                </div>  
+                <div class="span9">
+                     <?php blackpirates_breadcrumb();?>
+                </div>  
+            </div>
         </section>    
 
 	<div id="content" class="site-content">

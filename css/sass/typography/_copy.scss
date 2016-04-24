@@ -76,6 +76,7 @@ big {
 	@include font-size(1.2);
 }
 
+.breadcrumb,
 figcaption {
     @include font-size(0.9375);
 }

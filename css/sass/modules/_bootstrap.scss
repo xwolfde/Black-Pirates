@@ -180,6 +180,15 @@
 	clear: both;
 }
 
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
 // zwischen 767 und 969px
 @media (min-width: $size__breakMD) and (max-width: $size__breakLG) {
 	.row {

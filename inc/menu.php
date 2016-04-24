@@ -19,6 +19,12 @@ function blackpirates_breadcrumb($lasttitle = '') {
   $after	= $options['breadcrumb_afterhtml']; // '</span>'; // tag after the current crumb
   $pretitletextstart   = '<span>';
   $pretitletextend     = '</span>';
+  $show_on_startpage = $options['breadcrumb_show_onstartpage']; // If true, on startpage, show a breadcrumb
+  
+  
+  if (($show_on_startpage != true) && (is_home() || is_front_page())) {
+      return;
+  }
   
   if ($options['breadcrumb_withtitle']) {
 	echo '<h3 class="breadcrumb_sitetitle" role="presentation">'.get_bloginfo( 'title' ).'</h3>';

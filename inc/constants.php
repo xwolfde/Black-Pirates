@@ -13,7 +13,7 @@ $defaultoptions = array(
     'breadcrumb_afterhtml'		=> '</span>',
     'breadcrumb_uselastcat'		=> true,
     'breadcrumb_withtitle'		=> false,
-    
+    'breadcrumb_show_onstartpage'       => false,
 ); 
 
 

@@ -108,10 +108,14 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: "DejaWeb", sans-serif; }
 
-.entry-header h1 {
+.entry-header h1, .entry-header h2 {
   -webkit-text-shadow: 1px 1px 1px #969696;
   -moz-text-shadow: 1px 1px 1px #969696;
   text-shadow: 1px 1px 1px #969696; }
+.entry-header h1 {
+  font-size: 2em; }
+.entry-header h2 {
+  font-size: 1.8em; }
 
 p {
   margin-bottom: 1.5em; }
@@ -178,6 +182,7 @@ big {
   font-size: 19.2px;
   font-size: 1.2rem; }
 
+.breadcrumb,
 figcaption {
   font-size: 15px;
   font-size: 0.9375rem; }
@@ -3020,6 +3025,12 @@ CSS Font File for Wordpress Theme Dwarsloeper
 
 .container:after {
   clear: both; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
 
 @media (min-width: 767px) and (max-width: 979px) {
   .row {

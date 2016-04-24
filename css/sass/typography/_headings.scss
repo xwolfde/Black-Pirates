@@ -3,8 +3,16 @@ h1, h2, h3, h4, h5, h6 {
         font-family: $font__headlines;
 }
 
-.entry-header  h1 {
-    -webkit-text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-    -moz-text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
-    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+.entry-header {
+    h1, h2 {
+        -webkit-text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+        -moz-text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+        text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    }
+    h1 {
+      font-size: 2em;  
+    }
+    h2 {
+      font-size: 1.8em;  
+    }
 }

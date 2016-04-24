@@ -20,7 +20,7 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-        <div class="span9">
+         <div class="span9">
             <div class="entry-content">
                     <?php
                             the_content( sprintf(
