@@ -3521,9 +3521,25 @@ ul.skip-links {
 */
 .site-header {
   background-color: #000;
+  color: #ff8800;
   margin: 0;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  max-height: 70px;
+  vertical-align: middle; }
+  .site-header h1, .site-header p {
+    display: inline; }
+  .site-header p {
+    line-height: 50px;
+    margin: 10px 0; }
+  .site-header h1 {
+    margin-left: 10px; }
+    .site-header h1 a {
+      color: #ff8800;
+      text-decoration: none; }
+  .site-header .trigger:focus,
+  .site-header .trigger:hover {
+    cursor: pointer; }
 
 @media (max-width: 480px) {
   .site-header {
@@ -3571,11 +3587,6 @@ ul.skip-links {
 /*--------------------------------------------------------------
 ## Content structure
 --------------------------------------------------------------*/
-@media (min-width: 767px) {
-  .site-header .span9,
-  .breadcrumb .span9,
-  article .span9 {
-    padding-left: 40px; } }
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/

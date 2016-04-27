@@ -12,12 +12,11 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 </head>
 
@@ -47,24 +46,32 @@
 	<header id="masthead" class="site-header" role="banner">
             <div class="container">
                 <div class="row">
-                    <div class="site-branding span3" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                    <h1 class="site-title"><?php 
-                        $header_image = get_header_image();
+                    <div class="span4">
+                        <div class="pull-left">
+                            <p id="trigger" class="fa fa-bars fa-lg trigger">
+                                <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
+                            </p>
+                         </div>
+                        <div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                            <h1 class="site-title"><?php 
+                            $header_image = get_header_image();
 
-                        if ( ! is_front_page() ) { 
-                            echo '<a itemprop="url" rel="home" href="'.blackpirates_esc_url(home_url( '/' ) ).'">';	
-			} 
-                        if ( ! empty( $header_image ) ) {	
-                            echo '<img src="'.blackpirates_esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="'.get_bloginfo( 'title' ).'">';	   
-			} else {				 
-                            echo get_bloginfo( 'title' );   
-			} 
-			if ( ! is_front_page() ) {  
-                            echo "</a>"; 			    
-			}
-                        ?></h1>   
-                    </div><!-- .site-branding -->
-                    <div class="span9">
+                            if ( ! is_front_page() ) { 
+                                echo '<a itemprop="url" rel="home" href="'.blackpirates_esc_url(home_url( '/' ) ).'">';	
+                            } 
+                            if ( ! empty( $header_image ) ) {	
+                                echo '<img src="'.blackpirates_esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="'.get_bloginfo( 'title' ).'">';	   
+                            } else {				 
+                                echo get_bloginfo( 'title' );   
+                            } 
+                            if ( ! is_front_page() ) {  
+                                echo "</a>"; 			    
+                            }
+                            ?></h1>   
+                        </div><!-- .site-branding -->
+                     </div>
+                    
+                    <div class="span8 text-right">
 
                          <?php 
 			$description = get_bloginfo( 'description', 'display' );
@@ -79,12 +86,10 @@
        
         <section class="breadcrumb container">
             <div class="row">
-                <div class="span3">
-                    <div class="trigger">
-                            <a href="#" id="trigger" class="menu-trigger"><?php esc_html_e('Menu','blackpirates'); ?></a>
-                    </div>  
+                <div class="span4">
+
                 </div>  
-                <div class="span9">
+                <div class="span8 pull-right">
                      <?php blackpirates_breadcrumb();?>
                 </div>  
             </div>

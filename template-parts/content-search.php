@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <div class="row">
-        <header class="entry-header span3">
+        <header class="entry-header span4">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ( 'post' === get_post_type() ) : ?>
@@ -21,7 +21,7 @@
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-         <div class="span9">
+         <div class="span8">
             <div class="entry-summary">
                     <?php the_excerpt(); ?>
             </div><!-- .entry-summary -->

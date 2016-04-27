@@ -5,9 +5,33 @@
 
 .site-header {
     background-color: $color__background_header;
+    color: $color_main;
     margin: 0;
     position: relative;
     width: 100%;
+    max-height: 70px;
+    vertical-align: middle;
+      
+    h1, p {
+        display: inline;
+    }
+    
+    p {
+        line-height: 50px;
+        margin: 10px 0;
+    }
+    h1 {
+        margin-left: 10px;
+        
+        a {
+              color: $color_main;
+              text-decoration: none;
+        }
+    }
+    .trigger:focus,
+    .trigger:hover {
+        cursor: pointer;
+    }
 }
 
 
