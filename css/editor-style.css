@@ -117,6 +117,10 @@ h1, h2, h3, h4, h5, h6 {
 .entry-header h2 {
   font-size: 1.8em; }
 
+.site-header h1 {
+  font-family: "roboto", "PoliticsHead", "DejaWeb", serif;
+  text-transform: uppercase; }
+
 p {
   margin-bottom: 1.5em; }
 
@@ -249,6 +253,29 @@ CSS Font File for Wordpress Theme Dwarsloeper
   src: url("../fonts/dejaweb/DejaWeb.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+/* Brausepulver */
+/* Von Peter Wiegel */
+/* Licensed as: SIL Open Font License (OFL), http://www.fontspace.com/peter-wiegel/brausepulver */
+@font-face {
+  font-family: 'Brausepulver';
+  src: url("../fonts/brausepulver/Brausepulver.ttf");
+  src: url("../fonts/brausepulver/Brausepulver.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* Primitive */
+/* Von Rick Mueller */
+/* Licensed as: SIL Open Font License (OFL), http://www.fontspace.com/rick-mueller/primitive */
+@font-face {
+  font-family: 'Primitive';
+  src: url("../fonts/primitive/Primitive.ttf");
+  src: url("../fonts/primitive/Primitive.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* Politicshead */
+/* Font Politics Head by SG Gestaltung (WTFPL Lizenz, http://de.wikipedia.org/wiki/WTFPL) */
+@font-face {
+  font-family: 'PoliticsHead';
+  src: local(PoliticsHead), url(../fonts/politicshead/PoliticsHeadv1_9.woff2) format("woff2"), url(../fonts/politicshead/PoliticsHeadv1_9.woff) format("woff"), url(../fonts/politicshead/PoliticsHeadv1_9.ttf) format("truetype"); }
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2884,6 +2911,9 @@ CSS Font File for Wordpress Theme Dwarsloeper
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.text-right {
+  text-align: right; }
 
 .clear {
   clear: both; }

@@ -256,6 +256,10 @@ h1, h2, h3, h4, h5, h6 {
 .entry-header h2 {
   font-size: 1.8em; }
 
+.site-header h1 {
+  font-family: "roboto", "PoliticsHead", "DejaWeb", serif;
+  text-transform: uppercase; }
+
 p {
   margin-bottom: 1.5em; }
 
@@ -388,6 +392,29 @@ CSS Font File for Wordpress Theme Dwarsloeper
   src: url("../fonts/dejaweb/DejaWeb.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
+/* Brausepulver */
+/* Von Peter Wiegel */
+/* Licensed as: SIL Open Font License (OFL), http://www.fontspace.com/peter-wiegel/brausepulver */
+@font-face {
+  font-family: 'Brausepulver';
+  src: url("../fonts/brausepulver/Brausepulver.ttf");
+  src: url("../fonts/brausepulver/Brausepulver.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* Primitive */
+/* Von Rick Mueller */
+/* Licensed as: SIL Open Font License (OFL), http://www.fontspace.com/rick-mueller/primitive */
+@font-face {
+  font-family: 'Primitive';
+  src: url("../fonts/primitive/Primitive.ttf");
+  src: url("../fonts/primitive/Primitive.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+/* Politicshead */
+/* Font Politics Head by SG Gestaltung (WTFPL Lizenz, http://de.wikipedia.org/wiki/WTFPL) */
+@font-face {
+  font-family: 'PoliticsHead';
+  src: local(PoliticsHead), url(../fonts/politicshead/PoliticsHeadv1_9.woff2) format("woff2"), url(../fonts/politicshead/PoliticsHeadv1_9.woff) format("woff"), url(../fonts/politicshead/PoliticsHeadv1_9.ttf) format("truetype"); }
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -3474,6 +3501,9 @@ ul.skip-links {
   margin-left: auto;
   margin-right: auto; }
 
+.text-right {
+  text-align: right; }
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -3525,7 +3555,7 @@ ul.skip-links {
   margin: 0;
   position: relative;
   width: 100%;
-  max-height: 70px;
+  height: auto;
   vertical-align: middle; }
   .site-header h1, .site-header p {
     display: inline; }
@@ -3533,13 +3563,57 @@ ul.skip-links {
     line-height: 50px;
     margin: 10px 0; }
   .site-header h1 {
-    margin-left: 10px; }
+    margin: 0 0 0 10px;
+    line-height: 50px; }
     .site-header h1 a {
       color: #ff8800;
       text-decoration: none; }
+      .site-header h1 a:focus, .site-header h1 a:hover {
+        color: #e09e52; }
   .site-header .trigger:focus,
   .site-header .trigger:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    color: #e09e52; }
+  .site-header .search-siteheader .searchwrap .searchform {
+    margin: 10px 0;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 0; }
+  .site-header .search-siteheader .searchwrap input[type="text"] {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    transition: width 1s cubic-bezier(0, 0.795, 0, 1);
+    cursor: pointer;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #000;
+    font-size: 17.6px;
+    font-size: 1.1rem; }
+  .site-header .search-siteheader .searchwrap input[type="submit"] {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    color: #e09e52;
+    float: right;
+    text-indent: -10000px;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity .4s ease;
+    box-shadow: none;
+    margin: 0;
+    padding: 0; }
+  .site-header .search-siteheader .searchwrap:hover input[type="text"], .site-header .search-siteheader .searchwrap:focus input[type="text"] {
+    width: 240px;
+    z-index: 1;
+    border-bottom: 1px solid #ff8800;
+    cursor: text;
+    color: #ff8800; }
 
 @media (max-width: 480px) {
   .site-header {

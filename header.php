@@ -46,7 +46,7 @@
 	<header id="masthead" class="site-header" role="banner">
             <div class="container">
                 <div class="row">
-                    <div class="span4">
+                    <div class="span7">
                         <div class="pull-left">
                             <p id="trigger" class="fa fa-bars fa-lg trigger">
                                 <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
@@ -61,7 +61,7 @@
                             } 
                             if ( ! empty( $header_image ) ) {	
                                 echo '<img src="'.blackpirates_esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="'.get_bloginfo( 'title' ).'">';	   
-                            } else {				 
+                            } else {			
                                 echo get_bloginfo( 'title' );   
                             } 
                             if ( ! is_front_page() ) {  
@@ -71,14 +71,8 @@
                         </div><!-- .site-branding -->
                      </div>
                     
-                    <div class="span8 text-right">
-
-                         <?php 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-                                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                         <?php endif; ?>
-                        
+                    <div class="span5 text-right">
+                         <?php get_template_part('header', 'searchform'); ?>
                     </div>  
                 </div>
                 </div> <!-- /.container -->        
@@ -87,7 +81,11 @@
         <section class="breadcrumb container">
             <div class="row">
                 <div class="span4">
-
+                     <?php 
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+                                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                         <?php endif; ?>
                 </div>  
                 <div class="span8 pull-right">
                      <?php blackpirates_breadcrumb();?>
