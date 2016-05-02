@@ -245,12 +245,20 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "DejaWeb", sans-serif; }
+  font-family: "roboto", "DejaWeb", sans-serif; }
 
 .entry-header h1, .entry-header h2 {
   -webkit-text-shadow: 1px 1px 1px #969696;
   -moz-text-shadow: 1px 1px 1px #969696;
   text-shadow: 1px 1px 1px #969696; }
+  .entry-header h1 a, .entry-header h2 a {
+    text-shadow: none;
+    -webkit-text-shadow: none;
+    -moz-text-shadow: none;
+    color: #404040;
+    text-decoration: none; }
+    .entry-header h1 a:focus, .entry-header h1 a:hover, .entry-header h2 a:focus, .entry-header h2 a:hover {
+      text-decoration: underline; }
 .entry-header h1 {
   font-size: 2em; }
 .entry-header h2 {
@@ -3178,11 +3186,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #ff8800; }
   a:visited {
-    color: purple; }
+    color: #e09e52; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: red; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {

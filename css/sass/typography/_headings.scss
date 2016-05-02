@@ -8,6 +8,20 @@ h1, h2, h3, h4, h5, h6 {
         -webkit-text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
         -moz-text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
         text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+        
+        a {
+            text-shadow: none;
+            -webkit-text-shadow: none;
+            -moz-text-shadow: none;
+            
+            color: $color__text-main;
+            text-decoration: none;
+            
+            &:focus,
+            &:hover {
+                 text-decoration: underline;
+            }
+        }
     }
     h1 {
       font-size: 2em;  
