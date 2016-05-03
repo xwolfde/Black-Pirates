@@ -121,9 +121,11 @@ h1, h2, h3, h4, h5, h6 {
     .entry-header h1 a:focus, .entry-header h1 a:hover, .entry-header h2 a:focus, .entry-header h2 a:hover {
       text-decoration: underline; }
 .entry-header h1 {
-  font-size: 2em; }
+  font-size: 2em;
+  line-height: 1.5em; }
 .entry-header h2 {
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  line-height: 1.2em; }
 
 .site-header h1 {
   font-family: "roboto", "PoliticsHead", "DejaWeb", serif;

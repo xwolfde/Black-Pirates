@@ -12,15 +12,25 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="row">
 	<header class="entry-header span4">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                
+		<?php 
+                the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); 
 
+                if (has_post_thumbnail()) { 
+                    $output = get_the_post_thumbnail($post->ID, array(300,300));
+                    if (!empty($output)) {
+                        echo '<figure class="thumb">';
+                        echo $output;
+                        echo "</figure>\n";
+                    }
+                } ?>
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php blackpirates_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-         <div class="span8">
+        <div class="span8">
             <div class="entry-content">
                     <?php
                             the_content( sprintf(

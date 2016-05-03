@@ -19,10 +19,43 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0;
+        
+        p:first-child {
+            margin-top: 10px;
+        }
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+
+.thumb {
+    width: 300px;
+    text-align: center;
+    border: 1px solid $color_gray_light;
+    background:$color_gray_lighter;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+    
+    img {
+        padding: 0;
+        margin:0 0 -6px 0;
+        @include inline-block();
+       
+    }
+    &:hover {
+      
+    }
+}
+
+.entry-header {
+    h2, h1 {
+        margin: 0 0 10px 0;
+        padding: 0;
+    }
 }
