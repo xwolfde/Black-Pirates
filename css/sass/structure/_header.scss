@@ -42,7 +42,7 @@
         
     }
     .search-siteheader {
-       
+        @include font-size($font__size-searchheader);
         .searchwrap {
             .searchform {
                 margin: 10px 0;
@@ -59,7 +59,7 @@
                 padding: 0;
                 border: none;
                 background-color: $color__background_header;
-                @include font-size($font__size-content);
+               
             }
            
             input[type="submit"] {
@@ -98,7 +98,12 @@
     } 
     
 }
-
+p.site-description {
+    background-color: white;
+    margin: 0 0 20px 0;
+    padding: 8px 15px;
+   @include font-size($font__size-small);
+}
 
 
 @media (max-width: $size__breakSM) {

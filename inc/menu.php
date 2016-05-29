@@ -13,10 +13,11 @@
 function blackpirates_breadcrumb($lasttitle = '') {
   global $options;
   
-  $delimiter	= $options['breadcrumb_delimiter']; // = ' / ';
+  $delimiter	= '';
   $home		= $options['breadcrumb_root']; // __( 'Startseite', 'blackpirates' ); // text for the 'Home' link
-  $before	= $options['breadcrumb_beforehtml']; // '<span class="current">'; // tag before the current crumb
-  $after	= $options['breadcrumb_afterhtml']; // '</span>'; // tag after the current crumb
+  $before	= '<li class="active">'; // tag before the current crumb
+  $beforetree	= '<li>'; // tag before the current crumb
+  $after	= '</li>'; // tag after the current crumb
   $pretitletextstart   = '<span>';
   $pretitletextend     = '</span>';
   $show_on_startpage = $options['breadcrumb_show_onstartpage']; // If true, on startpage, show a breadcrumb
@@ -30,15 +31,18 @@ function blackpirates_breadcrumb($lasttitle = '') {
 	echo '<h3 class="breadcrumb_sitetitle" role="presentation">'.get_bloginfo( 'title' ).'</h3>';
 	echo "\n";
     }
-  echo '<nav aria-labelledby="bc-title" class="breadcrumbs">'; 
+  echo '<nav aria-labelledby="bc-title" class="breadcrumb">'; 
   echo '<h4 class="screen-reader-text" id="bc-title">'.__('You are here:','blackpirates').'</h4>';
+  echo "<ol>";
   if ( !is_home() && !is_front_page() || is_paged() ) { 
     
     global $post;
     
     $homeLink = home_url('/');
-    echo '<a href="' . $homeLink . '">' . $home . '</a>' . $delimiter;
- 
+    echo $beforetree;
+    echo '<a href="' . $homeLink . '">' . $home . '</a>';
+    echo $after;
+    
     if ( is_category() ) {
 	global $wp_query;
 	$cat_obj = $wp_query->get_queried_object();
@@ -50,11 +54,11 @@ function blackpirates_breadcrumb($lasttitle = '') {
 	echo $before . single_cat_title('', false) .  $after;
  
     } elseif ( is_day() ) {
-	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$delimiter;
-	echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' .$delimiter;
+	echo $beforetree. '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' .$after;
+	echo $beforetree.'<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' .$after;
 	echo $before . get_the_time('d') . $after; 
     } elseif ( is_month() ) {
-	echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $delimiter;
+	echo $beforetree.'<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $after;
 	echo $before . get_the_time('F') . $after;
     } elseif ( is_year() ) {
 	echo $before . get_the_time('Y') . $after; 
@@ -63,20 +67,20 @@ function blackpirates_breadcrumb($lasttitle = '') {
 	if ( get_post_type() != 'post' ) {
 	    $post_type = get_post_type_object(get_post_type());
 	    $slug = $post_type->rewrite;
-	    echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>' .$delimiter;
+	    echo $beforetree. '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>' .$after;
 	    echo $before . get_the_title() . $after; 
 	} else {
 	    
-	$cat = get_the_category(); 
-	if ($options['breadcrumb_uselastcat']) {
-	    $last = array_pop($cat);
-	} else {
-	    $last = $cat[0];
-	}
-	$catid = $last->cat_ID;
-
-	echo get_category_parents($catid, TRUE,  $delimiter );
-	echo $before . get_the_title() . $after;
+            $cat = get_the_category(); 
+            if ($options['breadcrumb_uselastcat']) {
+                $last = array_pop($cat);
+            } else {
+                $last = $cat[0];
+            }
+            $catid = $last->cat_ID;
+        //    echo $beforehtml. 
+         //   echo get_category_parents($catid, TRUE,  $delimiter );
+            echo $before . get_the_title() . $after;
 
 	} 
     } elseif ( !is_single() && !is_page() && !is_search() && get_post_type() != 'post' && !is_404() ) {
@@ -84,7 +88,7 @@ function blackpirates_breadcrumb($lasttitle = '') {
 	echo $before . $post_type->labels->singular_name . $after;
     } elseif ( is_attachment() ) {
 	$parent = get_post($post->post_parent);
-	echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>'. $delimiter;
+	echo $beforetree. '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>'. $after;
 	echo $before . get_the_title() . $after;
     } elseif ( is_page() && !$post->post_parent ) {
 	echo $before . get_the_title() . $after;
@@ -98,7 +102,7 @@ function blackpirates_breadcrumb($lasttitle = '') {
 	    $parent_id  = $page->post_parent;
 	}
 	$breadcrumbs = array_reverse($breadcrumbs);
-	foreach ($breadcrumbs as $crumb) echo $crumb . $delimiter;
+	foreach ($breadcrumbs as $crumb) echo $beforetree. $crumb . $after;
 	echo $before . get_the_title() . $after; 
     } elseif ( is_search() ) {
 	if (isset($lasttitle) && (strlen(trim($lasttitle))>1)) {
@@ -121,6 +125,7 @@ function blackpirates_breadcrumb($lasttitle = '') {
   } elseif (is_home()) {
 	echo $before . get_the_title(get_option('page_for_posts')) . $after;
   }
+  echo "</ol>";
    echo '</nav>'; 
    
 }

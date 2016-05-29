@@ -46,7 +46,7 @@
 	<header id="masthead" class="site-header" role="banner">
             <div class="container">
                 <div class="row">
-                    <div class="span7">
+                    <div class="col-md-7">
                         <div class="pull-left">
                             <p id="trigger" class="fa fa-bars fa-lg trigger">
                                 <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
@@ -71,23 +71,23 @@
                         </div><!-- .site-branding -->
                      </div>
                     
-                    <div class="span5 text-right">
+                    <div class="col-lg-5 colmd-5 text-right">
                          <?php get_template_part('header', 'searchform'); ?>
                     </div>  
                 </div>
                 </div> <!-- /.container -->        
 	</header><!-- #masthead -->
        
-        <section class="breadcrumb container">
+        <section class="container">
             <div class="row">
-                <div class="span4">
+                <div class="col-md-4">
                      <?php 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
                                     <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
                          <?php endif; ?>
                 </div>  
-                <div class="span8 pull-right">
+                <div class="col-md-8 pull-right">
                      <?php blackpirates_breadcrumb();?>
                 </div>  
             </div>

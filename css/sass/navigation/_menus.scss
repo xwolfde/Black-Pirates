@@ -1,10 +1,19 @@
 
-
+/*
 .container {
 	position: relative;
 	overflow: hidden;
 }
+*/
 
+
+.breadcrumb {
+    @include font-size($font__size-small);
+    ol {
+        margin: 0;
+        padding: 0;
+    }
+} 
 .menu-trigger {
 	position: relative;
 	padding-left: 60px;

@@ -60,15 +60,27 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 
 $font__sitetitle: 'roboto','PoliticsHead', 'DejaWeb', serif;
 
-
+$font__size-small: 1.0;
 $font__size-content: 1.1;
+$font__size-searchheader: 1.1;
 $font__size-quote: 1.2;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
+//== Breadcrumbs
+//
+
+ $breadcrumb-padding-vertical:   8px;
+ $breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+ $breadcrumb-bg:                 white;
+//** Breadcrumb text color
+ $breadcrumb-color:              #ccc;
+//** Text color of current page in the breadcrumb
+ $breadcrumb-active-color:      $color_gray_dark;
+//** Textual separator for between breadcrumb elements
+ $breadcrumb-separator:          "/";
 // Structure
-
-
 
 $size__breakSM: 480px;
 $size__breakMD: 767px;

@@ -11,14 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
      <div class="row">
-	<header class="entry-header span4">
+	<header class="entry-header col-md-4">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
 			<?php blackpirates_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-        <div class="span8">
+        <div class="col-md-8">
             <div class="entry-content">
                     <?php the_content(); ?>
                     <?php
