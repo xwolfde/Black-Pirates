@@ -1,29 +1,9 @@
-
+/*
+ Main SCSS Mix file
+*/
 
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Settings
-# Mixins
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-    ## Posts and pages
-	## Asides
-	## Comments
-# Moduls and Plugins
-# Media
-	## Captions
-	## Galleries
+# Variables
 --------------------------------------------------------------*/
 @import "variables";
 
@@ -36,66 +16,54 @@
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "normalize";
+@import "modules/normalize";
 
 /*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
+# Modules
 --------------------------------------------------------------*/
 @import "modules/clearings";
+@import "modules/alignments";
+
+
+/* 
+# Bootstrap Framework
+*/
+@import "bootstrap/bootstrap"; 
 
 /*--------------------------------------------------------------
-# Widgets
+# Fonts
 --------------------------------------------------------------*/
-@import "structure/secondary/widgets";
+@import "fonts/font-awesome";
+@import "fonts/font-linecons";
+@import "fonts/font-dejaweb";
+// @import "fonts/font-brausepulver";
+// @import "fonts/font-primitive";
+@import "fonts/font-roboto";
+@import "fonts/font-politicshead";
+/*--------------------------------------------------------------
+# Atoms
+--------------------------------------------------------------*/
+@import "atoms/atoms";
 
 /*--------------------------------------------------------------
-# Content and general layout
+# Molecules
 --------------------------------------------------------------*/
-@import "structure/structure";
+@import "molecules/molecules";
+/*--------------------------------------------------------------
+# Organism
+--------------------------------------------------------------*/
+@import "organism/organism";
 
 /*--------------------------------------------------------------
-# Infinite scroll, bootstrap and other plugins
+# Extentions, Infinite scroll and other plugins
 --------------------------------------------------------------*/
-@import "bootstrap"; 
-     
-@import "modules/infinite-scroll";
-// @import "modules/plugin-flexslider";
-// @import "modules/plugin-fancybox";
-// @import "modules/plugin-wpc7";
-@import "modules/plugin-misc";
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
+@import "extentions/wordpress";
+
+// @import "extentions/infinite-scroll";
+// @import "extentions/plugin-flexslider";
+// @import "extentions/plugin-fancybox";
+// @import "extentions/plugin-fluidbox";
+// @import "extentions/plugin-wpc7";
+// @import "extentions/plugin-shariff";
 
  

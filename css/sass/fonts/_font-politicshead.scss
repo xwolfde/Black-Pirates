@@ -1,0 +1,16 @@
+/*
+CSS Font PoliticsHead
+*/
+
+
+/* Politicshead */
+/* Font Politics Head by SG Gestaltung (WTFPL Lizenz, http://de.wikipedia.org/wiki/WTFPL) */
+
+@font-face {
+	font-family:  'PoliticsHead'; 
+	src: local(PoliticsHead),
+	url(../fonts/politicshead/PoliticsHeadv1_9.woff2) format("woff2"),
+	url(../fonts/politicshead/PoliticsHeadv1_9.woff) format("woff"),
+	url(../fonts/politicshead/PoliticsHeadv1_9.ttf) format("truetype");
+}
+

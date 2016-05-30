@@ -1,0 +1,26 @@
+
+/* 
+      Molecular Elements, that use and extend atoms
+*/
+
+@import "accessibility";
+@import "galleries";
+@import "headings";
+@import "media";
+@import "menus";
+
+blockquote {
+    p {
+        color: $color__text-quote;
+        margin: 10px;
+        
+        cite {
+            @include center-block();
+            text-align: right;
+            @include font-size(0.9375);
+        }
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }    
+}

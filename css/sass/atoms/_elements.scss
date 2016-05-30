@@ -1,3 +1,45 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size($font__size-content);
+	line-height: $font__line-height-body;
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+
 p {
 	margin-bottom: 1.5em;
 }
@@ -5,7 +47,6 @@ p {
 dfn, cite, em, i {
 	font-style: italic;
 }
-
 
 q {
   background: $color__background-quote;
@@ -21,22 +62,6 @@ blockquote {
   overflow: hidden;
   @include font-size($font__size-quote);
   font-style: italic;
- 
-    p {
-        color: $color__text-quote;
-        margin: 10px;
-        
-        cite {
-            @include center-block();
-            text-align: right;
-            @include font-size(0.9375);
-        }
-    }
-    p:last-child {
-        margin-bottom: 0;
-    }
-
-    
 }
  
 
@@ -49,7 +74,7 @@ pre {
 	background: $color__background-pre;
         color: $color__text-pre;
 	font-family: $font__pre;
-	@include font-size(0.9375);
+	@include font-size($font__size-small);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -59,7 +84,7 @@ pre {
 
 code, kbd, tt, var {
 	font-family: $font__code;
-	@include font-size(0.9375);
+	@include font-size($font__size-small);
 }
 
 abbr, acronym {
@@ -76,8 +101,8 @@ big {
 	@include font-size(1.2);
 }
 
-.breadcrumb,
+
 figcaption {
-    @include font-size(0.9375);
+    @include font-size($font__size-small);
 }
 

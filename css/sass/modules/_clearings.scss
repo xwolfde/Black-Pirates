@@ -1,3 +1,25 @@
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+
+
 .clear:before,
 .clear:after,
 .entry-content:before,
