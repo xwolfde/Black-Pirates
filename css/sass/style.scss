@@ -16,19 +16,20 @@
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "modules/normalize";
+// @import "modules/normalize";
 
 /*--------------------------------------------------------------
 # Modules
 --------------------------------------------------------------*/
 @import "modules/clearings";
-@import "modules/alignments";
+// @import "modules/alignments";
 
 
 /* 
-# Bootstrap Framework
+# Use Framework
 */
-@import "bootstrap/bootstrap"; 
+
+@import "framework/bootstrap.scss"; 
 
 /*--------------------------------------------------------------
 # Fonts

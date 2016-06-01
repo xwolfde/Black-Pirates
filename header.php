@@ -46,13 +46,13 @@
 	<header id="masthead" class="site-header" role="banner">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
-                        <div class="pull-left">
+                    
+                        <div class="pull-left col-xs-2">
                             <p id="trigger" class="fa fa-bars fa-lg trigger">
                                 <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
                             </p>
                          </div>
-                        <div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                        <div class="col-xs-8 site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                             <h1 class="site-title"><?php 
                             $header_image = get_header_image();
 
@@ -69,12 +69,11 @@
                             }
                             ?></h1>   
                         </div><!-- .site-branding -->
-                     </div>
-                    
-                    <div class="col-lg-5 colmd-5 text-right">
+                 
+                    <div class="col-xs-2 pull-right text-right">
                          <?php get_template_part('header', 'searchform'); ?>
                     </div>  
-                </div>
+                
                 </div> <!-- /.container -->        
 	</header><!-- #masthead -->
        

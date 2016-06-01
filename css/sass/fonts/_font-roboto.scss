@@ -2,9 +2,6 @@
 CSS Font File Roboto
 */
 
-
-
-/* Roboto */
 @font-face {
     font-family: 'roboto';
     src: url('../fonts/roboto/Roboto-Bold-webfont.eot');
@@ -59,81 +56,3 @@ CSS Font File Roboto
     font-weight: normal;
     font-style: normal;
 }
-
-/* 
-    DejaWeb 
-    by AnatoleType
-*/
-
-@font-face {
-    font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb-Bold.ttf');
-    src: url('../fonts/dejaweb/DejaWeb-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}	
-
-@font-face {
-    font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb-BoldItalic.ttf');
-    src: url('../fonts/dejaweb/DejaWeb-BoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb-Italic.ttf');
-    src: url('../fonts/dejaweb/DejaWeb-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'DejaWeb';
-    src: url('../fonts/dejaweb/DejaWeb.ttf');
-    src: url('../fonts/dejaweb/DejaWeb.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* Brausepulver */
-/* Von Peter Wiegel */
-/* Licensed as: SIL Open Font License (OFL), http://www.fontspace.com/peter-wiegel/brausepulver */
-
-
-@font-face {
-    font-family: 'Brausepulver';
-    src: url('../fonts/brausepulver/Brausepulver.ttf');
-    src: url('../fonts/brausepulver/Brausepulver.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* Primitive */
-/* Von Rick Mueller */
-/* Licensed as: SIL Open Font License (OFL), http://www.fontspace.com/rick-mueller/primitive */
-
-
-@font-face {
-    font-family: 'Primitive';
-    src: url('../fonts/primitive/Primitive.ttf');
-    src: url('../fonts/primitive/Primitive.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* Politicshead */
-/* Font Politics Head by SG Gestaltung (WTFPL Lizenz, http://de.wikipedia.org/wiki/WTFPL) */
-
-@font-face {
-	font-family:  'PoliticsHead'; 
-	src: local(PoliticsHead),
-	url(../fonts/politicshead/PoliticsHeadv1_9.woff2) format("woff2"),
-	url(../fonts/politicshead/PoliticsHeadv1_9.woff) format("woff"),
-	url(../fonts/politicshead/PoliticsHeadv1_9.ttf) format("truetype");
-}
-

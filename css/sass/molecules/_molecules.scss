@@ -24,3 +24,11 @@ blockquote {
         margin-bottom: 0;
     }    
 }
+
+
+p.site-description {
+    background-color: white;
+    margin: 0 0 20px 0;
+    padding: 8px 15px;
+   @include font-size($font__size-small);
+}

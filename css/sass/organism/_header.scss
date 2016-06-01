@@ -98,12 +98,7 @@
     } 
     
 }
-p.site-description {
-    background-color: white;
-    margin: 0 0 20px 0;
-    padding: 8px 15px;
-   @include font-size($font__size-small);
-}
+
 
 
 @media (max-width: $size__breakSM) {
@@ -113,26 +108,7 @@ p.site-description {
         width: 100%;
         @include linear-gradient-fromtop($color__background_header, desaturate(lighten($color__background_header, 35%), 75%));
         
-        .site-branding {            
-            width: calc(100% - 100px);
-            @include inline-block;
-            h1 {
-                margin: 0;
-                color: orange;
-                @include inline-block;
-            }
-            img {
-                 max-height: 100px;
-                 max-width: 300px;
-                 overflow: hidden;
-                 width: auto;
-             }
-             p.site-description {
-                 margin: 0;
-                 display: inline;
-                 color: orange;
-             }
-        }
+        
         #site-navigation {
             width: 100px;
             float: right;

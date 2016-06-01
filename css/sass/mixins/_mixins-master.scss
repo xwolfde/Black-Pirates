@@ -11,12 +11,27 @@
 	margin-right: auto;
 }
 
-// Clearfix
+/*
+* Clearfix
+
 @mixin clearfix() {
 	content: "";
 	display: table;
 	table-layout: fixed;
 }
+*/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
