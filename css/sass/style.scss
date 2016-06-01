@@ -5,6 +5,8 @@
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
+@import "framework/bootstrap-variables";
+
 @import "variables";
 
 /*--------------------------------------------------------------
@@ -41,6 +43,20 @@
 // @import "fonts/font-primitive";
 @import "fonts/font-roboto";
 @import "fonts/font-politicshead";
+
+/*--------------------------------------------------------------
+# Extentions, Infinite scroll and other plugins
+--------------------------------------------------------------*/
+@import "extentions/wordpress";
+@import "extentions/mpmenu";
+// @import "extentions/infinite-scroll";
+// @import "extentions/plugin-flexslider";
+// @import "extentions/plugin-fancybox";
+// @import "extentions/plugin-fluidbox";
+// @import "extentions/plugin-wpc7";
+// @import "extentions/plugin-shariff";
+
+ 
 /*--------------------------------------------------------------
 # Atoms
 --------------------------------------------------------------*/
@@ -54,17 +70,3 @@
 # Organism
 --------------------------------------------------------------*/
 @import "organism/organism";
-
-/*--------------------------------------------------------------
-# Extentions, Infinite scroll and other plugins
---------------------------------------------------------------*/
-@import "extentions/wordpress";
-
-// @import "extentions/infinite-scroll";
-// @import "extentions/plugin-flexslider";
-// @import "extentions/plugin-fancybox";
-// @import "extentions/plugin-fluidbox";
-// @import "extentions/plugin-wpc7";
-// @import "extentions/plugin-shariff";
-
- 

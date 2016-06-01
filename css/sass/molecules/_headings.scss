@@ -19,26 +19,40 @@
             }
         }
     }
-    h1 {
-      font-size: 2em;  
-      line-height: 1.5em;
-    }
-    h2 {
-      font-size: 1.8em;  
-      line-height: 1.2em;
-    }
+  
 }
 .site-branding {
-    	margin-left: auto;
-	margin-right: auto;
-      h1 {
-        font-family: $font__sitetitle;
-        text-transform: uppercase;
-    	@include center-block();
-      }    
+    @include center-block();
+    width: auto;
+    
+    h1 {
+         background-color: $color__background_header; 
+        font-family: $font-family-sitetitle;
+        text-transform: capitalize;
+    	text-align: center;
+        @include border-radius(floor(($font-size-sitetitle * $line-height-base)));
+        @include center-block();
+        @include line-height($font-size-sitetitle);
+        height:  floor((2*$font-size-sitetitle * $line-height-base)); 
+        
+        width: max-content;
+        width: -moz-fit-content;
+        padding: floor(($font-size-sitetitle * $line-height-base)/2) 10px;
+            
+        a {
+              color: $color_main;
+              text-decoration: none;
+              
+              &:focus, 
+              &:hover {
+                   color: $color__link-maincolor;
+              }         
+              
+        }
 }
 
-.site-branding {            
+.site-branding {         
+    
             @include inline-block;
             h1 {
                 margin: 0;
@@ -58,3 +72,6 @@
              }
         }
 
+
+         
+    }

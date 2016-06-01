@@ -1,8 +1,16 @@
 // Rem output with px fallback
+/* 
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 16) * 1px;
 	font-size: $sizeValue * 1rem;
 }
+*/
+
+
+@mixin line-height($sizeValue: 14) {
+    line-height: floor(($sizeValue * $line-height-base)); 
+}
+
 
 // Center block
 @mixin center-block {

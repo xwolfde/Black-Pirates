@@ -18,9 +18,9 @@ input,
 select,
 textarea {
 	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size($font__size-content);
-	line-height: $font__line-height-body;
+	font-family: $font-family-base;
+	font-size:   $font-size-base;
+	line-height: $line-height-base;
 }
 
 blockquote, q {
@@ -51,6 +51,8 @@ dfn, cite, em, i {
 q {
   background: $color__background-quote;
   color: $color__text-quote;
+  font-family: $font-family-quotation;
+
 }
 
 blockquote {
@@ -60,7 +62,8 @@ blockquote {
   position: relative;
   border-left: 3px solid $color__border-quote;
   overflow: hidden;
-  @include font-size($font__size-quote);
+  font-size:  $font-size-large;
+  font-family: $font-family-quotation;
   font-style: italic;
 }
  
@@ -73,9 +76,9 @@ address {
 pre {
 	background: $color__background-pre;
         color: $color__text-pre;
-	font-family: $font__pre;
-	@include font-size($font__size-small);
-	line-height: $font__line-height-pre;
+	font-family: $font-family-pre;
+	font-size:  $font-size-small;
+        @include line-height($font-size-small);
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -83,8 +86,8 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
-	@include font-size($font__size-small);
+	font-family: $font-family-code;
+	font-size:  $font-size-small;
 }
 
 abbr, acronym {
@@ -98,11 +101,11 @@ mark, ins {
 }
 
 big {
-	@include font-size(1.2);
+	font-size:  $font-size-large;
 }
 
 
 figcaption {
-    @include font-size($font__size-small);
+    font-size:  $font-size-small;
 }
 

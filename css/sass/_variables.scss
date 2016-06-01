@@ -4,6 +4,11 @@
 // Pirate colors
 
 $color_main: #ff8800;
+
+$color-contrast-first: #5f80bb;
+$color-contrast-second: #039391;
+$color-contrast-third: pink;
+
 $color_gray_lighter: #f2f2f2;
 $color_gray_light: #e6e6e6;
 $color_gray_dark: #312e2e;
@@ -31,12 +36,14 @@ $color__background-quote: #f2f2f2;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $color_main;
+$color__link: $color__link-maincolor; // $color_main;
 $color__link-visited: $color__link-maincolor;
-$color__link-hover: red;
+$color__link-hover: darken($color__link, 15%); // red;
 $color__text-main: #404040;
 $color__text-pre: #2ECC71;
  
+ $headings-color:          inherit;
+ $headings-small-color:     inherit;
 
 
 $color__border-button: #ccc #ccc #bbb;
@@ -51,24 +58,44 @@ $color__table__background: #f2f2f2;
 $color__table__border: #e6e6e6;
 $color__table__tr_odd_background: #fff;
 $color__table__tr_even_background: #fcfcfc;
+
+
+
+//** Background color for `<body>`.
+ $body-bg:              $color__background-body;
+//** Global text color on `<body>`.
+ $text-color:            $color__text-main;
+
+//** Global textual link color.
+ $link-color:           $color__link-maincolor;
+//** Link hover color set via `darken()` function.
+ $link-hover-color:     $color__link-hover; 
+//** Link hover decoration.
+ $link-hover-decoration: underline;
+
+
+
 // Typography
 
-$font__headlines: 'roboto', 'DejaWeb', sans-serif;
-$font__main: 'roboto', 'DejaWeb', sans-serif;
-$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__pre: "Courier 10 Pitch", Courier, monospace;
 
-$font__sitetitle: 'roboto','PoliticsHead', 'DejaWeb', serif;
 
-$font__size-small: 1.0;
-$font__size-content: 1.1;
-$font__size-searchheader: 1.1;
-$font__size-quote: 1.2;
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
+$font-family-sans-serif:    'roboto', 'DejaWeb', sans-serif;
+$font-family-serif:         Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:     Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", "Courier New",monospace;
+$font-family-sitetitle:     'roboto','PoliticsHead', 'DejaWeb', serif;
 
-// stolen from bootstrap, cause its good :)
-// TODO. build it into code
+$font-family-base:          $font-family-sans-serif;
+$font-family-headlines:     $font-family-sans-serif;
+$font-family-code:          $font-family-monospace;
+$font-family-pre:           "Courier 10 Pitch", Courier, monospace;
+$font-family-quotation:     $font-family-serif;
+
+$headings-font-family:    $font-family-headlines;
+
+/* 
+* Font Sizes 
+*/
+
  $font-size-base:          14px;
  $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
  $font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
@@ -77,8 +104,20 @@ $font__line-height-pre: 1.6;
  $font-size-h2:            floor(($font-size-base * 2.15)); // ~30px
  $font-size-h3:            ceil(($font-size-base * 1.7)); // ~24px
  $font-size-h4:            ceil(($font-size-base * 1.25)); // ~18px
- $font-size-h5:            $font-size-base;
- $font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
+ $font-size-h5:            ceil(($font-size-base * 1.15)); // ~16px
+ $font-size-h6:            $font-size-base;
+ $font-size-sitetitle:       floor(($font-size-base * 2.6)); // ~36px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+
+$headings-font-weight:    500;
+$headings-line-height:    1.1;
+
 
 
 

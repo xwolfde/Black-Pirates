@@ -47,12 +47,12 @@
             <div class="container">
                 <div class="row">
                     
-                        <div class="pull-left col-xs-2">
+                        <div class="site-menu-trigger">
                             <p id="trigger" class="fa fa-bars fa-lg trigger">
                                 <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
                             </p>
                          </div>
-                        <div class="col-xs-8 site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                        <div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                             <h1 class="site-title"><?php 
                             $header_image = get_header_image();
 
@@ -70,7 +70,7 @@
                             ?></h1>   
                         </div><!-- .site-branding -->
                  
-                    <div class="col-xs-2 pull-right text-right">
+                    <div class="search-siteheader">    
                          <?php get_template_part('header', 'searchform'); ?>
                     </div>  
                 
