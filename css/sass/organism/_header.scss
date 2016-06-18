@@ -2,12 +2,25 @@
 # Header CSS
 */
 
+#masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+}
+.admin-bar {
+    #masthead {
+        top: 32px;
+    }
+}
 
 .site-header {
    background-color: $color__background_header;
     color: $color_main;
     margin: 0;
-    position: relative;
+    z-index: 10;
+    
     width: 100%;
     height: auto;
     vertical-align: middle;
@@ -46,7 +59,7 @@
 }
 
 
-
+/*
 @media (max-width: $size__breakSM) {
    
     .site-header {
@@ -61,5 +74,19 @@
             @include inline-block;
             
         }
+    }
+}
+*/
+
+.subheader {
+    @extend .container;    
+    padding-top: 60px;    
+    position: relative;
+    .info {
+        @extend .col-md-4;        
+    }
+    .bread {
+        @extend .col-md-8; 
+        @extend .pull-right; 
     }
 }

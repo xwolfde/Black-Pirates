@@ -22,21 +22,8 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-    <!-- Push Wrapper -->
-    <div class="mp-pusher" id="mp-pusher">
-       <nav id="mp-menu" class="mp-menu" aria-label="<?php _e( 'Navigation', 'blackpirates' ); ?>" role="navigation">
-           <div class="mp-level">
-               <h2><?php _e( 'Navigation', 'blackpirates' );?></h2>
-                <?php wp_nav_menu( 
-                        array( 'theme_location' => 'primary',
-                            'menu_id' => 'primary-menu' , 
-                            'container' => false,
-                            'container_id'    => FALSE,
-                            'menu_class'      => '',
-                            'menu_id'         => FALSE,
-                            'walker' => new Walker_Main_Menu) ); ?>
-           </div>   
-        </nav><!-- #site-navigation -->       
+    
+         
         <nav aria-label="Skiplinks">
             <ul class="skip-links">		
                 <li><a id="skip-link-nav" class="screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to site navigation.', 'blackpirates' ); ?></a></li>
@@ -74,17 +61,32 @@
             </div>
                   </div>
 	</header><!-- #masthead -->
-       
-        <section class="container">
+       <!-- Push Wrapper -->
+    <div class="mp-pusher" id="mp-pusher">
+     
+         <nav id="mp-menu" class="mp-menu" aria-label="<?php _e( 'Navigation', 'blackpirates' ); ?>" role="navigation">
+           <div class="mp-level">
+               <h2><?php _e( 'Navigation', 'blackpirates' );?></h2>
+                <?php wp_nav_menu( 
+                        array( 'theme_location' => 'primary',
+                            'menu_id' => 'primary-menu' , 
+                            'container' => false,
+                            'container_id'    => FALSE,
+                            'menu_class'      => '',
+                            'menu_id'         => FALSE,
+                            'walker' => new Walker_Main_Menu) ); ?>
+           </div>   
+        </nav><!-- #site-navigation -->    
+        <section class="subheader">
             <div class="row">
-                <div class="col-md-4">
+                <div class="info">
                      <?php 
 			$description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
                                     <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
                          <?php endif; ?>
                 </div>  
-                <div class="col-md-8 pull-right">
+                <div class="bread">
                      <?php blackpirates_breadcrumb();?>
                 </div>  
             </div>
