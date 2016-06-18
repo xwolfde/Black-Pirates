@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
                         
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blackpirates' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blackpirates' ), 'WordPress' ); ?></a>
