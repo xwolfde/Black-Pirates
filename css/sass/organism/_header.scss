@@ -8,13 +8,18 @@
     left: 0;
     height: 60px;
     width: 100%;
+    
+    .admin-bar & {
+          top: 32px;
+    }
 }
+/*
 .admin-bar {
     #masthead {
         top: 32px;
     }
 }
-
+*/
 .site-header {
    background-color: $color__background_header;
     color: $color_main;

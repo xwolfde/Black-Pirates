@@ -2188,9 +2188,12 @@ p.site-description { background-color: white; margin: 0 0 20px 0; padding: 8px 1
 # Header CSS
 */
 #masthead { position: fixed; top: 0; left: 0; height: 60px; width: 100%; }
-
 .admin-bar #masthead { top: 32px; }
 
+/*
+.admin-bar { #masthead { top: 32px; }
+}
+*/
 .site-header { background-color: #000; color: #ff8800; margin: 0; z-index: 10; width: 100%; height: auto; vertical-align: middle; }
 .site-header p { display: inline; }
 .site-header p { line-height: 50px; margin: 10px 0; }
