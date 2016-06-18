@@ -10,6 +10,40 @@
 }
 
 /*
+* MP Menu
+*/
+
+.mp-menu {
+    a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        
+        &:visited {
+		color:  rgba(255,255,255,0.5);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color:  rgba(255,255,255,0.8);
+                text-decoration: underline;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+        .mp-back {
+            color: white;
+        }
+    }
+    h2 {
+        color: white;
+    }
+}
+
+/*
 * Sonstige Navigationselemente
 */
 
@@ -35,3 +69,5 @@
 		width: 50%;
 	}
 }
+
+

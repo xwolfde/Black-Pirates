@@ -5,11 +5,11 @@
 
 @import "accessibility";
 @import "galleries";
-@import "headings";
+@import "headers";
 @import "media";
 @import "menus";
 @import "forms";
-
+  
 blockquote {
     p {
         color: $color__text-quote;

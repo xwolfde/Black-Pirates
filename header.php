@@ -44,37 +44,35 @@
             </ul>
         </nav>
 	<header id="masthead" class="site-header" role="banner">
-            <div class="container">
+             <div class="container">
                 <div class="row">
-                    
-                        <div class="site-menu-trigger">
-                            <p id="trigger" class="fa fa-bars fa-lg trigger">
-                                <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
-                            </p>
-                         </div>
-                        <div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                            <h1 class="site-title"><?php 
-                            $header_image = get_header_image();
+                    <div class="site-menu-trigger">
+                        <p id="trigger" class="fa fa-bars fa-lg trigger">
+                            <em class="screen-reader-text"><?php esc_html_e('Menu','blackpirates'); ?></em>
+                        </p>
+                     </div>
+                    <div class="site-branding" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                        <h1 class="site-title"><?php 
+                        $header_image = get_header_image();
 
-                            if ( ! is_front_page() ) { 
-                                echo '<a itemprop="url" rel="home" href="'.blackpirates_esc_url(home_url( '/' ) ).'">';	
-                            } 
-                            if ( ! empty( $header_image ) ) {	
-                                echo '<img src="'.blackpirates_esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="'.get_bloginfo( 'title' ).'">';	   
-                            } else {			
-                                echo get_bloginfo( 'title' );   
-                            } 
-                            if ( ! is_front_page() ) {  
-                                echo "</a>"; 			    
-                            }
-                            ?></h1>   
-                        </div><!-- .site-branding -->
-                 
+                        if ( ! is_front_page() ) { 
+                            echo '<a itemprop="url" rel="home" href="'.blackpirates_esc_url(home_url( '/' ) ).'">';	
+                        } 
+                        if ( ! empty( $header_image ) ) {	
+                            echo '<img src="'.blackpirates_esc_url( $header_image ).'" width="'.get_custom_header()->width.'" height="'.get_custom_header()->height.'" alt="'.get_bloginfo( 'title' ).'">';	   
+                        } else {			
+                            echo get_bloginfo( 'title' );   
+                        } 
+                        if ( ! is_front_page() ) {  
+                            echo "</a>"; 			    
+                        }
+                        ?></h1>   
+                    </div><!-- .site-branding -->
                     <div class="search-siteheader">    
                          <?php get_template_part('header', 'searchform'); ?>
                     </div>  
-                
-                </div> <!-- /.container -->        
+            </div>
+                  </div>
 	</header><!-- #masthead -->
        
         <section class="container">

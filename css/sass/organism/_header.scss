@@ -4,7 +4,7 @@
 
 
 .site-header {
-   
+   background-color: $color__background_header;
     color: $color_main;
     margin: 0;
     position: relative;
@@ -27,8 +27,22 @@
         color: $color__link-maincolor;
         
     }
-     
     
+    
+    .site-menu-trigger {
+        @extend .col-sm-1;
+        @extend .col-xs-1;
+        
+    }
+    .site-branding {
+        @extend .col-sm-8;
+        @extend .col-xs-11;
+    }
+    .search-siteheader {
+        @extend .col-sm-3;
+        @extend .col-xs-12;
+        @extend .pull-right;      
+    }
 }
 
 

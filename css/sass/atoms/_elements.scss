@@ -20,7 +20,7 @@ textarea {
 	color: $color__text-main;
 	font-family: $font-family-base;
 	font-size:   $font-size-base;
-	line-height: $line-height-base;
+	line-height: $line-height-computed; // $line-height-base;
 }
 
 blockquote, q {
