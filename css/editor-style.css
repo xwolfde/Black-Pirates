@@ -2057,7 +2057,7 @@ embed, iframe, object { max-width: 100%; }
 /*
 * MP Menu
 */
-.mp-menu { top: 58px; }
+.mp-menu { top: 55px; }
 .mp-menu a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
 .mp-menu a:visited { color: rgba(255, 255, 255, 0.5); }
 .mp-menu a:hover, .mp-menu a:focus, .mp-menu a:active { color: rgba(255, 255, 255, 0.8); text-decoration: underline; }
