@@ -16,7 +16,7 @@ and open the template in the editor.
     position: relative;
     width: 100%;
     color: $color_main;
-    
+     @include box-shadow(0px 1px 5px 0px rgba(0,0,0,0.75));
      a {
             color: $color-primary-3;
             text-decoration: none;
