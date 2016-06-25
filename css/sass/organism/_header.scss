@@ -6,9 +6,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 55px;
     width: 100%;
-    @include box-shadow(0px 1px 3px 0px rgba(0,0,0,0.75));
+    @include box-shadow(0px 1px 1px 0px rgba(0,0,0,0.75));
     
     .admin-bar & {
           top: 32px;
@@ -23,7 +22,7 @@
 */
 .site-header {
    background-color: $color__background_header;
-    color: $color_main;
+    color: $brand-primary;
     margin: 0;
     z-index: 10;
     
@@ -43,7 +42,7 @@
     .trigger:focus,
     .trigger:hover {
         cursor: pointer;
-        color: $color__link-maincolor;
+        color: $brand-primary;
         
     }
     
@@ -64,25 +63,6 @@
     }
 }
 
-
-/*
-@media (max-width: $size__breakSM) {
-   
-    .site-header {
-        position: fixed;
-        width: 100%;
-        @include linear-gradient-fromtop($color__background_header, desaturate(lighten($color__background_header, 35%), 75%));
-        
-        
-        #site-navigation {
-            width: 100px;
-            float: right;
-            @include inline-block;
-            
-        }
-    }
-}
-*/
 
 .subheader {
     @extend .container;    

@@ -16,6 +16,8 @@
                 float: left;
                 color: $color-secondary-2-0;
                 padding-right: 30px;
+		height: 33px;
+		
                 @include border-radius(5px);
                 @include placeholder($color-secondary-2-3);
                 

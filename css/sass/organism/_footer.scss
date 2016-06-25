@@ -11,20 +11,18 @@ and open the template in the editor.
 
 
 .site-footer {
+    
+    
+    
     background-color: $color__background-footer;
     margin: 0;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    color: $color_main;
-     @include box-shadow(0px 1px 5px 0px rgba(0,0,0,0.75));
+    color: $brand-primary;
+     @include box-shadow(0px 1px 3px 0px rgba(0,0,0,0.75));
      a {
-            color: $color-primary-3;
-            text-decoration: none;
-
-            &:focus, 
-            &:hover {
-                 color: $color-primary-2;
-            }         
+            text-decoration: none;        
 
         }
 }
@@ -39,3 +37,4 @@ and open the template in the editor.
         
     }
 }
+

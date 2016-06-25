@@ -5,33 +5,20 @@
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
-@import "framework/bootstrap-variables";
 
+@import "bootstrap/bootstrap";
 @import "variables";
-
 /*--------------------------------------------------------------
 # Mixins
 --------------------------------------------------------------*/
-@import "mixins/mixins-master";
 @import "mixins/mixins";
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-// @import "modules/normalize";
 
 /*--------------------------------------------------------------
 # Modules
 --------------------------------------------------------------*/
-@import "modules/clearings";
-// @import "modules/alignments";
+@import "modules/images";
+@import "modules/alignments";
 
-
-/* 
-# Use Framework
-*/
-
-@import "framework/bootstrap.scss"; 
 
 /*--------------------------------------------------------------
 # Fonts
@@ -43,10 +30,6 @@
 --------------------------------------------------------------*/
 @import "extentions/wordpress";
 @import "extentions/mpmenu";
-// @import "extentions/infinite-scroll";
-// @import "extentions/plugin-flexslider";
-// @import "extentions/plugin-fancybox";
-// @import "extentions/plugin-fluidbox";
 // @import "extentions/plugin-wpc7";
 // @import "extentions/plugin-shariff";
 

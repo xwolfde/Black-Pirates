@@ -106,3 +106,23 @@ Mixins  for borders and gradients
 @mixin no-margins() {
     margin: 0;
 }
+
+
+
+
+@mixin line-height($sizeValue: 14) {
+    line-height: floor(($sizeValue * $line-height-base)); 
+}
+
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}

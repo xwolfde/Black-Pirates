@@ -13,6 +13,12 @@
 
 	</div><!-- #content -->
 
+
+    
+
+
+</div><!-- /pusher -->
+</div><!-- #page  -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
                         
@@ -21,12 +27,6 @@
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'blackpirates' ), 'blackpirates', '<a href="http://xwolf.de/" rel="designer">xwolf</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-    
-
-
-</div><!-- /pusher -->
-</div><!-- #page  -->
-
 <?php wp_footer(); ?>
 
 </body>
