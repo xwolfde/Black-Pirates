@@ -145,10 +145,9 @@ add_action( 'widgets_init', 'blackpirates_widgets_init' );
 function blackpirates_scripts() {
     global $options;
 	wp_enqueue_style( 'blackpirates-style', get_stylesheet_uri() );
-//	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.min.js', array(), $options['js-version'], false );
-
-//	wp_enqueue_script( 'blackpirates-classie', get_template_directory_uri() . '/js/classie.min.js', array(), $options['js-version'], true );
-//	wp_enqueue_script( 'blackpirates-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), $options['js-version'], true );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.min.js', array(), $options['js-version'], false );
+	wp_enqueue_script( 'blackpirates-classie', get_template_directory_uri() . '/js/classie.min.js', array(), $options['js-version'], true );
+	wp_enqueue_script( 'blackpirates-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), $options['js-version'], true );
 	wp_enqueue_script( 'blackpirates-mlpushmenu', get_template_directory_uri() . '/js/mlpushmenu.min.js', array('modernizr','blackpirates-classie'), $options['js-version'], true );
 	wp_enqueue_script( 'blackpirates-theme', get_template_directory_uri() . '/js/theme.min.js', array('modernizr', 'blackpirates-mlpushmenu'), $options['js-version'], true );
 
