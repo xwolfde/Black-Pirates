@@ -63,8 +63,11 @@ blockquote {
   border-left: 3px solid $color__border-quote;
   overflow: hidden;
   font-size:  $font-size-large;
+  line-height: $line-height-large;
   font-family: $font-family-quotation;
   font-style: italic;
+  text-align: center;
+  
 }
  
 
