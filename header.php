@@ -24,7 +24,7 @@
 <div id="page" class="site">
     
          
-        <nav aria-label="Skiplinks">
+        <nav aria-label="Skiplinks" class="sr-only">
             <ul class="skip-links">		
                 <li><a id="skip-link-nav" class="screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to site navigation.', 'blackpirates' ); ?></a></li>
                 <li><a id="skip-link-content"  class="screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content.', 'blackpirates' ); ?></a></li>

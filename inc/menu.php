@@ -33,7 +33,7 @@ function blackpirates_breadcrumb($lasttitle = '') {
     }
   echo '<nav aria-labelledby="bc-title" class="breadcrumb">'; 
   echo '<h4 class="screen-reader-text" id="bc-title">'.__('You are here:','blackpirates').'</h4>';
-  echo "<ol>";
+  echo "<ul>";
   if ( !is_home() && !is_front_page() || is_paged() ) { 
     
     global $post;
@@ -125,7 +125,7 @@ function blackpirates_breadcrumb($lasttitle = '') {
   } elseif (is_home()) {
 	echo $before . get_the_title(get_option('page_for_posts')) . $after;
   }
-  echo "</ol>";
+  echo "</ul>";
    echo '</nav>'; 
    
 }

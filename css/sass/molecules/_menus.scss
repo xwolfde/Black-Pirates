@@ -1,12 +1,11 @@
 
 
 
-.breadcrumb {
-    font-size:  $font-size-small;
-    ol {
-        margin: 0;
-        padding: 0;
+
+    .breadcrumb-separator-2 > li + li:before {
+        content: "\00bb";
     }
+    .breadcrumb {
 }
 
 /*

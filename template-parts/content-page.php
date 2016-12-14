@@ -10,12 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-     <div class="row">
-	<header class="entry-header col-md-4">
+	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-        <div class="col-md-8">
-            <div class="entry-content">
+        <div class="entry-content">
                     <?php the_content(); ?>
                     <?php
                             wp_link_pages( array(
@@ -23,7 +21,7 @@
                                     'after'  => '</div>',
                             ) );
                     ?>
-            </div><!-- .entry-content -->
+         </div><!-- .entry-content -->
 
             <footer class="entry-footer">
                     <?php
@@ -38,6 +36,5 @@
                             );
                     ?>
             </footer><!-- .entry-footer -->
-        </div>
 </article><!-- #post-## -->
 
